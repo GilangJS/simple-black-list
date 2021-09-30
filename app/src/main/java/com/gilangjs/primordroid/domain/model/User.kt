@@ -1,4 +1,4 @@
-package com.gilangjs.primordroid.domain
+package com.gilangjs.primordroid.domain.model
 
 data class User (
     val id: String,

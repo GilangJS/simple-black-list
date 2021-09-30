@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Primordroid">
         <activity
-            android:name=".MainActivity"
+            android:name="com.gilangjs.primordroid.presentation.features.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
