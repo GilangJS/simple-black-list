@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.gilangjs.primordroid">
+    package="com.gilangjs.blacklist">
 
     <application
         android:allowBackup="true"
@@ -8,9 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Primordroid">
+        android:theme="@style/Theme.BlackList">
         <activity
-            android:name="com.gilangjs.primordroid.presentation.features.main.MainActivity"
+            android:name="com.gilangjs.blacklist.presentation.features.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,2 +1,2 @@
-# Primordroid
-Personal Android Starter Project
+# Simple Black List
+Saving a list of banned list
