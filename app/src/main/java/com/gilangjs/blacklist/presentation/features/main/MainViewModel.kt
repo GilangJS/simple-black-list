@@ -16,6 +16,8 @@ class MainViewModel @Inject constructor(
     val param: LiveData<String?> get() = _param
 
     fun setParam(param: String?) {
-        _param.value = param
+        val regex = Regex("https?\\S*")
+        val link = param?.let { regex.find(it)?.value }
+        _param.value = link
     }
 }
