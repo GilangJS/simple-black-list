@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.gilangjs.blacklist.framework.DB_NAME
 import com.gilangjs.blacklist.framework.local.room.AppDatabase
-import com.gilangjs.blacklist.framework.local.room.dao.UserDao
+import com.gilangjs.blacklist.framework.local.room.dao.ItemDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,5 +24,5 @@ internal object RoomModule {
 
     @Provides
     @Singleton
-    fun provideUserDao(appDatabase: AppDatabase): UserDao = appDatabase.userDao()
+    fun provideUserDao(appDatabase: AppDatabase): ItemDao = appDatabase.userDao()
 }
