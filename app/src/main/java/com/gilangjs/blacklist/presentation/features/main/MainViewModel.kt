@@ -7,6 +7,7 @@ import com.gilangjs.blacklist.domain.interactors.DeleteItemUseCase
 import com.gilangjs.blacklist.domain.interactors.GetItemListUseCase
 import com.gilangjs.blacklist.domain.interactors.GetItemUseCase
 import com.gilangjs.blacklist.domain.interactors.SaveItemUseCase
+import com.gilangjs.blacklist.domain.matcher.HashExtractor
 import com.gilangjs.blacklist.domain.model.Item
 import com.gilangjs.blacklist.presentation.BaseViewModel
 import com.gilangjs.blacklist.presentation.features.main.MainViewModel.AppState.*
@@ -19,7 +20,8 @@ class MainViewModel @Inject constructor(
     private val getItemListUseCase: GetItemListUseCase,
     private val getItemUseCase: GetItemUseCase,
     private val saveItemUseCase: SaveItemUseCase,
-    private val deleteItemUseCase: DeleteItemUseCase
+    private val deleteItemUseCase: DeleteItemUseCase,
+    private val hashExtractor: HashExtractor
 ) : BaseViewModel() {
     private val _itemList = MutableLiveData<List<Item>>().apply { value = listOf() }
     private val _appState = MutableLiveData<AppState>().apply { value = AppState.SHOW_ITEM }
@@ -47,7 +49,7 @@ class MainViewModel @Inject constructor(
                     ITEM_EXIST
                 }
                 else {
-                    _currentItem.value = Item(link)
+                    _currentItem.value = Item(link = link, hash = hashExtractor.execute(link))
                     SAVE_ITEM
                 }
         }

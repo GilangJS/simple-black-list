@@ -15,6 +15,9 @@ class ItemRepository @Inject constructor(
     override suspend fun findItemByLink(link: String): Result<Item> =
         dataSource.findItemByLink(link)
 
+    override suspend fun findItemByHash(hash: String): Result<Item> =
+        dataSource.findItemByHash(hash)
+
     override suspend fun deleteItem(item: Item): Result<Unit> {
         return try {
             dataSource.deleteItem(item)

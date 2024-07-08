@@ -6,5 +6,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "item")
 data class ItemEntity(
     @PrimaryKey val link: String,
+    val hash: String,
     val source: String?
 )

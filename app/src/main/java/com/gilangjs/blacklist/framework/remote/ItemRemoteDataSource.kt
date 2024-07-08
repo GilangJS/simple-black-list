@@ -10,6 +10,10 @@ class ItemRemoteDataSource @Inject constructor(): IItemDataSource {
         return Result.success(listOf())
     }
 
+    override suspend fun findItemByHash(hash: String): Result<Item> {
+        TODO("Not yet implemented")
+    }
+
     override suspend fun findItemByLink(link: String): Result<Item> {
         TODO("Not yet implemented")
     }

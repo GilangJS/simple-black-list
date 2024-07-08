@@ -8,6 +8,8 @@ interface IItemRepository {
 
     suspend fun findItemByLink(link: String): Result<Item>
 
+    suspend fun findItemByHash(hash: String): Result<Item>
+
     suspend fun deleteItem(item: Item): Result<Unit>
 
     suspend fun saveItem(item: Item): Result<Unit>

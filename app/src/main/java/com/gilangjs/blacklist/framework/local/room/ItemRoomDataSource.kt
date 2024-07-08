@@ -27,6 +27,14 @@ class ItemRoomDataSource @Inject constructor(
         }
     }
 
+    override suspend fun findItemByHash(hash: String): Result<Item> {
+        return try {
+            Result.success(itemDao.findByHash(hash).toItem())
+        } catch (t: Throwable) {
+            Result.failure(t)
+        }
+    }
+
     override suspend fun deleteItem(item: Item): Result<Unit> {
         return try {
             Result.success(itemDao.deleteItem(item.toItemEntity()))
